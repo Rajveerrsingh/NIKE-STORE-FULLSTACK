@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Dark Mode Support */
+  html {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll Styles */
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-style::-webkit-scrollbar {
+    @apply w-2;
+  }
+  .scroll-style::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+  .scroll-style::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-tr from-[#1E3A8A] to-[#10B981] via-[#F59E0B];
+  }
+
+  /* Theme Colors */
+  .bg-theme {
+    background-image: linear-gradient(45deg, #1E3A8A 0%, #10B981 50%, #F59E0B 100%);
+  }
+  .bg-theme-cart {
+    @apply bg-gradient-to-b from-[#1E3A8A] to-[#10B981] shadow-md shadow-gray-900;
+  }
+}
+
+@layer components {
+  /* Container */
+  .nike-container {
+    @apply w-11/12 mx-auto;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md py-4 px-6 z-50;
+  }
+  
+  /* Footer */
+  .footer {
+    @apply w-full bg-gray-900 text-gray-200 py-6 text-center;
+  }
+
+  /* Buttons */
+  .button-theme {
+    @apply px-7 py-2 rounded-lg text-white bg-[#F59E0B] hover:bg-[#1E3A8A] active:scale-95 shadow-md;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    @apply flex flex-col items-center justify-center text-center py-20 bg-theme text-white;
+  }
+
+  /* Product Cards */
+  .product-card {
+    @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105;
+  }
+  
+  /* Text Gradient */
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-tr from-[#1E3A8A] to-[#F59E0B];
+  }
+  
+  /* Toggle Dark Mode */
+  .dark-mode-toggle {
+    @apply absolute top-4 right-6 p-2 bg-gray-700 text-white rounded-full cursor-pointer;
+  }
+}

@@ -1,2 +1,16 @@
-# NIKE-STORE-FULLSTACK
-A full-stack Nike store with a seamless shopping experience, modern design, and secure checkout.
+
+First, run the development server:
+
+```bash
+npm install
+# or
+yarn instll
+
+# and Now:
+
+npm run dev
+# or
+yarn dev
+```
+Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result.
+
