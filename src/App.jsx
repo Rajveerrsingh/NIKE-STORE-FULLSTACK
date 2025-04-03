@@ -1,23 +1,26 @@
-import React from 'react';
-import { Cart, FlexContent, Footer, Hero, Navbar, Sales, Stories } from './components';
-import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from './data/data.js';
+import React from "react";
+import sneakers from "./data/sneakers"; // <-- make sure path is correct
+import SneakerList from "./components/SneakerList";
 
 const App = () => {
   return (
-   <>
-      <Navbar/>
-      <Cart />
-      <main className='flex flex-col gap-16 relative'>
-        <Hero heroapi={heroapi} />
-        <Sales endpoint={popularsales} ifExists />
-        <FlexContent endpoint={highlight} ifExists />
-        <Sales endpoint={toprateslaes} />
-        <FlexContent endpoint={sneaker} />
-        <Stories story={story} />
-      </main>
-      <Footer footerAPI={footerAPI} />
-   </>
-  )
-}
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Sneaker Showcase</h1>
+      <SneakerList sneakers={sneakers} />
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    fontFamily: "Arial, sans-serif",
+    textAlign: "center",
+    padding: "20px"
+  },
+  heading: {
+    fontSize: "2rem",
+    marginBottom: "20px"
+  }
+};
 
 export default App;
